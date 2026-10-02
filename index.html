@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tournament Manager</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🏆 Tournament Manager</h1>
+  <p>Football Tournament 2026</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('teams')">Teams</button>
+  <button onclick="showPage('matches')">Matches</button>
+  <button onclick="showPage('table')">Points Table</button>
+</nav>
+
+<main>
+
+  <!-- HOME -->
+
+  <section id="home" class="page">
+
+    <div class="hero">
+
+      <h2>🏆 My Tournament</h2>
+
+      <p>
+        Manage teams, matches and tournament results.
+      </p>
+
+    </div>
+
+    <div class="stats">
+
+      <div>
+        <b id="teamCount">0</b>
+        <span>Teams</span>
+      </div>
+
+      <div>
+        <b id="matchCount">0</b>
+        <span>Matches</span>
+      </div>
+
+      <div>
+        <b id="playedCount">0</b>
+        <span>Played</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TEAMS -->
+
+  <section id="teams" class="page hidden">
+
+    <div class="card">
+
+      <h2>👥 Add Team</h2>
+
+      <input
+        id="teamName"
+        type="text"
+        placeholder="Team name"
+      >
+
+      <button onclick="addTeam()">
+        Add Team
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>Teams</h2>
+
+      <div id="teamList"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MATCHES -->
+
+  <section id="matches" class="page hidden">
+
+    <div class="card">
+
+      <h2>⚽ Create Match</h2>
+
+      <select id="homeTeam"></select>
+
+      <select id="awayTeam"></select>
+
+      <input
+        id="matchDate"
+        type="date"
+      >
+
+      <button onclick="createMatch()">
+        Create Match
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <h2>Matches</h2>
+
+      <div id="matchList"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- POINTS TABLE -->
+
+  <section id="table" class="page hidden">
+
+    <div class="card">
+
+      <h2>📊 Points Table</h2>
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>#</th>
+              <th>Team</th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>GD</th>
+              <th>Pts</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="pointsTable"></tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
